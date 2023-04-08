@@ -1,11 +1,11 @@
  <?php
-    // open this directory 
-    $Directory = opendir("/");
-    // get each entry
+    $Directory = opendir("./images");
+    $fileArray = array();
+
     while ($entryName = readdir($Directory)) {
-        $fileArray[] = $entryName;
+        $fileArray += $entryName;
     }
-    // close directory
+
     closedir($Directory);
     echo json_encode($fileArray);
 ?>
