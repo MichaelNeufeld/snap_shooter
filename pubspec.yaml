@@ -9,6 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  geolocator: ^9.0.2
   http: ^0.13.5
   swipe_deck: ^1.1.0
 
