@@ -30,7 +30,8 @@ class MainApp extends StatelessWidget {
     final response = await http.get(Uri.parse("${url}getFiles.php"));
     List<Image> images = [];
     if (response.statusCode == 200) {
-      imageString = jsonDecode(response.body);
+      imageString =
+          (jsonDecode(response.body) as List).map((e) => e as String).toList();
       for (var i = 0; i < imageString!.length; i++) {
         images.add(Image.network("${url}images/${imageString![i]}"));
       }
